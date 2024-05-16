@@ -2,6 +2,8 @@
 definePageMeta({
   layout: false
 })
+
+//define layout for the page
 const layout = ref('custom')
 </script>
 

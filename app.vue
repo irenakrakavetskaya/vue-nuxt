@@ -26,7 +26,10 @@ const nav = [
   { label: 'Custom', to: '/custom' },
   { label: 'Dynamic', to: '/dynamic' },
   { label: 'Other', to: '/other' },
+  { label: 'Forbidden', to: '/forbidden' },
+  { label: 'Redirect', to: '/redirect' },
 ]
+const route = useRoute()
 
 const counter = useState('counter', () => Math.round(Math.random() * 1000))
 const sameCounter = useState('counter')
@@ -57,6 +60,7 @@ function hello () {
     </NuxtExample2>
 
     <NuxtExample dir="features/data-fetching" :nav="nav" file="pages/index.vue">
+      <!-- Show Nuxt progress indicator on page change-->
       <NuxtLoadingIndicator />
       <NuxtLayout class="layouts">
         <NuxtPage />
@@ -75,10 +79,16 @@ function hello () {
           Remove layout
         </UButton>
       </div>
-      <!-- Show Nuxt progress indicator on page change
-
-      <NuxtPage />-->
     </NuxtExample>
+
+    <NuxtExample3 dir="routing/middleware" :nav="nav">
+      <NuxtPage />
+      <template #footer>
+        <div class="text-center p-4 op-50">
+          Current route: <UKbd>{{ route.path }}</UKbd>
+        </div>
+      </template>
+    </NuxtExample3>
 
     <NuxtWelcome />
   </div>

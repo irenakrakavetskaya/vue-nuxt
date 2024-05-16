@@ -6,6 +6,6 @@ definePageMeta({
 
 <template>
   <p>
-    The layout is set within <code>middleware/other.ts</code>.
+    The layout is set within <code>middleware/other.js</code>.
   </p>
 </template>
